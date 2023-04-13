@@ -1,5 +1,11 @@
-# naver-translation-localapp
- 혼자 쓰려고 만든 거 ㅇㅇ
+# Naver Translation API Python 3.11 Sample
+Originally meant to use for myself, but it's very usable so I'm updating the readme.
+
+## Prepare
+1. Install Python 3. You'll need to install Python 3.9 or later.
+2. Clone this git.
+3. Create `translationApp/secret.py` based on `translationApp/secret-example.py`.
+  - Since it's using OpenAPI but you need "App" created, API configuration is required.
 
 ## Practice
 Run: shell
@@ -7,13 +13,15 @@ Run: shell
 python3 ./app.py
 ```
 
-Run: windows
+Run: windows (Both CMD and Powershell)
 ```bat
-ren Please note that you've installed Python3.
+ren Please note that you've installed Python 3.
+ren If you installed both Python 2 and 3, maybe you'll need to
+ren use python3 to properly boot the app.
 python .\app.py
 ```
 
-### Syntax
+### Source String Syntax
 You should type `\n` for line breaks on input.  
 On output, the raw `\n` will be automatically decoded to line breaks.
 
@@ -68,7 +76,7 @@ Please check [secret-example.py](./translationApp/secret-example.py) for more de
 You can set the default I/O language code at [settings.py](./translationApp/settings.py).  
 The language code you can use can be found [here](https://developers.naver.com/docs/papago/papago-detectlangs-overview.md).
 
-Source language can be set to `auto`, which is "automatical detect".  
+Source language can be set to `auto`, which is "automatical detection".  
 Target language can't be set to `auto`.
 
 Prompt will be displayed to override the language settings when running.  
@@ -83,9 +91,8 @@ You'll have to include Python version, OS type, and the tracebacks.
 Please hide your secrets from traceback!
 
 ### My test environment
-- Python: 3.11.2, x64
+- Python: 3.11.2, x64 (Python 3.9 works)
 - OS: Windows 11 Pro
   - Locale: ko-KR
   - Code page: 949 `MS949` (65001 `UTF-8` support for modern CLI apps)
 - Tested file encoding: `CRLF`, `LF`
-  - Note: the included files' encoding is `CRLF`.
